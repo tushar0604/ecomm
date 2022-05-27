@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Dukaan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/ecomm.css">
+        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id = 'message'></div>
+        <header class="header">
+            <div class="head">
+                <div><a href="/home">HOME</a></div>
+                <div><a href="/store">STORE</a></div>
+                <div><a href="/about">ABOUT</a></div>
+                <div><a href="/order">ORDER</a></div>
+                <div id="cart">cart</div>
+            </div> 
+            <div class="generic">
+                <h1>The Generic</h1>
+            </div>
+        </header>
+        <div class="section music">
+            <div id="title">Music</div>
+            <!-- <div class="list">
+                <div class="product">Album 1</div>
+                <img src="../image/ar.jpg">
+                <div class="detail">
+                    <div>₹12.99</div>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
+            </div> -->
+        </div>
+        <section class="pagination">
+            <a class="page a">1</a>
+            <a class="page a">2</a>
+            <a class="page a">3</a>
+        </section>
+        <div class="section merch">
+            <div id="title">MERCH</div>
+            <!-- <div class="list">
+                <div class="product">T-Shirt</div>
+                <img src="../image/tshirt.jpg">
+                <div class="detail">
+                    <div>₹12.99</div>
+                    <button class="add-to-cart">Add to cart</button>
+                </div>
+            </div> -->
+        </div>
+        <section class="pagination">
+            <a class="page m">1</a>
+            <a class="page m">2</a>
+            <a class="page m">3</a>
+        </section>
+        <div id="see-cart">
+            <button id="open">see-cart</button>
+            <div class="popup-container" id="container">
+                <div class="popup">
+                    <button id="close">x </button>
+                    <div style="align-self: center">Cart</div>
+                    <div class="heading">
+                        <div class="top">ITEM</div>
+                        <div class="top">PRICE</div>
+                        <div class="top">QUANTITY</div>
+                    </div>
+                </div>
+                <button id="order-now">Order Now</button>
+            </div>
+        </div>
+        <footer>
+            <h2>The Generic</h2>
+            <div>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
+        </footer>
+    </body>
+    <script src="/javascript/getproducts.js"></script>
+    <script src="/javascript/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>

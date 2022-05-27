@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Dukaan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/ecomm.css">
+        <link rel="stylesheet" href="/css/order.css">
+        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id = 'message'></div>
+        <header class="header">
+            <div class="head">
+                <div><a href="/home">HOME</a></div>
+                <div><a href="/store">STORE</a></div>
+                <div><a href="/about">ABOUT</a></div>
+                <div><a href="/order">ORDER</a></div>
+                <div id="cart">cart</div>
+            </div> 
+            <div class="generic">
+                <h1>The Generic</h1>
+            </div>
+        </header>
+        <section>
+            <div class="Order">
+                <div id="title" style="font-size:20px;">ORDER LIST</div>
+            </div>
+        </section>
+        <footer>
+            <h2>The Generic</h2>
+            <div>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
+        </footer>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const order_detail = document.getElementsByClassName('Order')[0]
+        window.addEventListener('load', async()=>{
+            let result = await axios.get('http://localhost:3000/get-order')
+            result.data.forEach(order => {
+                let detail = document.createElement('div')
+                detail.classList.add('order_detail')
+                detail.innerHTML = 'Order ID ' + order[0]
+                order[1].forEach(album=>{
+                    const div1 = document.createElement('div')
+                    div1.classList.add('items')
+                    const div1_child1 = document.createElement('img')
+                    const div1_child2 = document.createElement('div')
+                    div1_child1.src = album.image_url
+                    div1_child2.innerHTML = album.name
+                    div1.appendChild(div1_child1)
+                    div1.appendChild(div1_child2)
+                    detail.appendChild(div1)
+                })
+                order[2].forEach(merch => {
+                    const div1 = document.createElement('div')
+                    div1.classList.add('items')
+                    const div1_child1 = document.createElement('img')
+                    const div1_child2 = document.createElement('div')
+                    div1_child1.src = album.image_url
+                    div1_child2.innerHTML = album.name
+                    div1.appendChild(div1_child1)
+                    div1.appendChild(div1_child2)
+                    detail.appendChild(div1)
+                })
+                order_detail.appendChild(detail)
+            });
+        })
+    </script>
+</html>

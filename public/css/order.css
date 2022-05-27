@@ -1,0 +1,18 @@
+.order{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.items{
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 100px;
+    justify-content: space-between;
+}
+
+.order_detail{
+    margin: 20px;
+}
