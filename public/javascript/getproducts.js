@@ -4,15 +4,15 @@ const pages1 = document.getElementsByClassName('a')
 const pages2 = document.getElementsByClassName('m')
 
 window.addEventListener('load', async ()=>{
-    await axios.get('http://localhost:3000/store/album')
+    await axios.get('http://3.108.40.244:3000/store/album')
     .then(albums=>{
         add(albums.data,'album')
     })
-    await axios.get('http://localhost:3000/store/merch')
+    await axios.get('http://3.108.40.244:3000/store/merch')
     .then(merchs =>{
         add(merchs.data,'merchendise')
     })
-    await axios.get('http://localhost:3000/get-cart')
+    await axios.get('http://3.108.40.244:3000/get-cart')
     .then(product =>{
         console.log(product)
         product.data[0].forEach(album=>{
@@ -27,7 +27,7 @@ window.addEventListener('load', async ()=>{
 for (var i = 0; i < pages1.length; i++) {
     pages1[i].addEventListener('click', async (e)=>{
         const no = e.target.innerText
-        let albums = await axios.get(`http://localhost:3000/store/album?page=${no}`)
+        let albums = await axios.get(`http://3.108.40.244:3000/store/album?page=${no}`)
         // console.log(albums.data)
         add(albums.data,'album') 
     });
@@ -36,7 +36,7 @@ for (var i = 0; i < pages1.length; i++) {
 for (var i = 0; i < pages2.length; i++) {
     pages2[i].addEventListener('click', async (e)=>{
         const no = e.target.innerText
-        let merches = await axios.get(`http://localhost:3000/store/merch?page=${no}`)
+        let merches = await axios.get(`http://3.108.40.244:3000/store/merch?page=${no}`)
         add(merches.data,'merchendise') 
     });
 }
@@ -121,7 +121,7 @@ async function add(items,category){
             id:id,
             category:category
         }
-        await axios.post('http://localhost:3000/add-to-cart',obj)
+        await axios.post('http://3.108.40.244:3000/add-to-cart',obj)
         added(name,source,amount,id,category)
     } 
 }
@@ -167,7 +167,7 @@ let added = (nam,ima,amo,id,cate)=>{
 async function remove(e){
     let id = e.target.id
     let group = e.target.className
-    // await axios.delete('http://localhost:3000/delete/'+id+'?cate='+group)
+    // await axios.delete('http://3.108.40.244:3000/delete/'+id+'?cate='+group)
     e.target.parentElement.previousElementSibling.remove()
     e.target.parentElement.previousElementSibling.remove()
     e.target.parentElement.remove()
